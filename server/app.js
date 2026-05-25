@@ -14,6 +14,21 @@ const { notFoundHandler, errorHandler } = require('./middleware/errorHandler');
 const logger = require('./utils/logger');
 
 const app = express();
+const allowedOrigins = process.env.CLIENT_ORIGIN
+  ? process.env.CLIENT_ORIGIN.split(',').map((origin) => origin.trim()).filter(Boolean)
+  : [];
+
+const corsOrigin = (origin, callback) => {
+  if (!origin) {
+    return callback(null, true);
+  }
+
+  const isAllowedOrigin = allowedOrigins.includes(origin);
+  const isLocalDevOrigin =
+    process.env.NODE_ENV !== 'production' && /^http:\/\/localhost:\d+$/.test(origin);
+
+  return callback(null, isAllowedOrigin || isLocalDevOrigin);
+};
 
 const apiLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
@@ -29,7 +44,7 @@ const apiLimiter = rateLimit({
 app.use(helmet());
 app.use(
   cors({
-    origin: process.env.CLIENT_ORIGIN ? process.env.CLIENT_ORIGIN.split(',') : true,
+    origin: corsOrigin,
     credentials: true
   })
 );

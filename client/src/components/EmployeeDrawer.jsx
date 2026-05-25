@@ -1,3 +1,4 @@
+import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { CalendarClock, FileText, Mail, Phone, ShieldAlert, X } from 'lucide-react';
 

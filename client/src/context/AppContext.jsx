@@ -1,4 +1,4 @@
-import { createContext, startTransition, useContext, useEffect, useState } from 'react';
+import React, { createContext, startTransition, useContext, useEffect, useState } from 'react';
 
 import {
   clearAccessToken,
@@ -37,6 +37,14 @@ const getStoredTheme = () => {
   }
 
   return window.localStorage.getItem('edms-theme') || 'light';
+};
+
+const isPublicAuthRoute = () => {
+  if (typeof window === 'undefined') {
+    return false;
+  }
+
+  return ['/login', '/register'].includes(window.location.pathname);
 };
 
 const buildPersonalAnalytics = (employee) => {
@@ -171,6 +179,14 @@ export const AppProvider = ({ children }) => {
 
     try {
       if (!getStoredAccessToken()) {
+        if (isPublicAuthRoute()) {
+          clearAccessToken();
+          clearWorkspace();
+          setNotice('');
+          setIsLoading(false);
+          return;
+        }
+
         try {
           const refreshResponse = await restoreSession();
           const refreshedToken = refreshResponse?.data?.data?.accessToken || refreshResponse;

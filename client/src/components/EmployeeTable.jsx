@@ -1,4 +1,4 @@
-import { startTransition, useDeferredValue, useState } from 'react';
+import React, { startTransition, useDeferredValue, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpDown, Search, SlidersHorizontal } from 'lucide-react';
 

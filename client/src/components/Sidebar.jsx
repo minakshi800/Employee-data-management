@@ -1,3 +1,4 @@
+import React from 'react';
 import { motion } from 'framer-motion';
 import { BarChart3, Briefcase, LogOut, Menu, MoonStar, SunMedium, UserRound, X } from 'lucide-react';
 import { NavLink } from 'react-router-dom';

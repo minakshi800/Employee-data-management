@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, KeyRound, ShieldCheck, UserRoundPlus } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
