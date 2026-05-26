@@ -8,26 +8,26 @@ The platform needs to work for three types of people:
 
 - HR managers who are constantly adding and updating employee records
 - Admins who need oversight of everything
-- Employees who just want to check their own profile
+- Here Employees who is just want to check their own profile
 
-Each of them has different needs and different levels of access, so the system has to handle that cleanly without things breaking or leaking data between roles.
+Each of them has their different needs and the different levels of access so that system has to handle cleanly without any things breaking or leaking data between roles.
 
-The look and feel matters here. The client wants something that feels modern and fast — smooth animations, a clean dashboard, nothing that looks like it was slapped together.
+The look and feel matters here. Here the client is wanting something that feels modern and fast smooth animations and clean dashboard where nothing that looks like it was slapped together.
 
-At the same time, the codebase needs to be maintainable because their internal dev team will be taking it over after handoff. So write code like someone else has to read it tomorrow.
+The same time here codebase needs to be maintainable because their internal dev team will be taking all it over after handoff. So  here you have to write code like someone else has to read it tomorrow.
 
 ---
 
 # Objective
 
-Here's what this project actually needs to do when it's done:
+So Here's what this project actually needs to do when it's  finally done:
 
-- Give users a secure way to sign up, log in, and stay logged in across sessions without having to re-authenticate every few minutes.
+- Here give users a secure way to sign up and log in, and stay logged in across sessions without  even having to re-authenticate every few minutes.
 - Let HR managers and admins fully manage employee records — adding people, updating their details, removing them when needed, and organizing everything by department, salary, or date.
-- Make sure each role only sees and does what they're supposed to.
+- Please make sure each role only sees and does what they're supposed to.
 - Build a dashboard that actually looks good.
-- Hook up email notifications.
-- Include analytics for workforce insights.
+- Hook up  the email notifications.
+- Include  the analytics for workforce insights.
 - Make the system production-ready with proper validation and security.
 
 ---
@@ -234,7 +234,7 @@ Each employee record should include:
 
 # 4. UI and Animation Requirements
 
-Framer Motion handles every animation.
+Frame the Motion handles every animation correctly.
 
 ## Required Animations
 
@@ -259,7 +259,7 @@ Avoid:
 - top
 - left
 
-### Additional Rules
+## The Additional Rules
 
 - Use AnimatePresence
 - Use layout prop
